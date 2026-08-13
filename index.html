@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CampusFixAI - Login</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="auth-page">
+<div class="auth-card">
+  <div class="brand"><i class="fa-solid fa-wrench"></i>Campus<span>FixAI</span></div>
+  <p class="muted" style="margin-bottom: 12px; font-size: 0.9rem;">Smart Campus Complaint & Maintenance Portal</p>
+  
+  <div class="tabs">
+    <button class="tab active" onclick="showLogin('student')"><i class="fa-solid fa-user-graduate"></i> Student</button>
+    <button class="tab" onclick="showLogin('admin')"><i class="fa-solid fa-user-shield"></i> Admin</button>
+  </div>
+
+  <form id="studentLogin" onsubmit="studentLogin(event)">
+    <h2 style="font-size: 1.3rem; font-weight: 800; margin-bottom: 6px;">Student Login</h2>
+    <label><i class="fa-solid fa-envelope"></i> Email Address</label>
+    <input id="studentEmail" type="email" value="student@campusfix.ai" required placeholder="student@campusfix.ai">
+    <label><i class="fa-solid fa-lock"></i> Password</label>
+    <input id="studentPassword" type="password" value="student123" required placeholder="••••••••">
+    <button class="btn primary full" type="submit"><i class="fa-solid fa-right-to-bracket"></i> Login as Student</button>
+  </form>
+
+  <form id="adminLogin" class="hidden" onsubmit="adminLogin(event)">
+    <h2 style="font-size: 1.3rem; font-weight: 800; margin-bottom: 6px;">Admin Login</h2>
+    <label><i class="fa-solid fa-envelope"></i> Admin Email</label>
+    <input id="adminEmail" type="email" value="admin@campusfix.ai" required placeholder="admin@campusfix.ai">
+    <label><i class="fa-solid fa-lock"></i> Password</label>
+    <input id="adminPassword" type="password" value="admin123" required placeholder="••••••••">
+    <button class="btn primary full" type="submit"><i class="fa-solid fa-shield-halved"></i> Login as Admin</button>
+  </form>
+
+  <p id="loginMsg" class="message"></p>
+
+  <div class="demo-box">
+    <b><i class="fa-solid fa-circle-info"></i> Demo Access Accounts</b>
+    Click to autofill credentials:
+    <div class="demo-btn-group">
+      <button type="button" onclick="fillCreds('student')"><i class="fa-solid fa-user-graduate"></i> Student Demo</button>
+      <button type="button" onclick="fillCreds('admin')"><i class="fa-solid fa-user-shield"></i> Admin Demo</button>
+    </div>
+  </div>
+</div>
+<script src="js/app.js"></script>
+</body>
+</html>
