@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Track Complaint - CampusFixAI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<nav class="navbar">
+  <a class="brand" href="student.html"><i class="fa-solid fa-wrench"></i>Campus<span>FixAI</span></a>
+  <a class="btn small" href="student.html"><i class="fa-solid fa-arrow-left"></i> Back to Dashboard</a>
+</nav>
+<main class="container narrow">
+<section class="card">
+  <p class="eyebrow"><i class="fa-solid fa-magnifying-glass-location"></i> TRACK ISSUE</p>
+  <h1 style="font-size: 1.8rem; font-weight: 800; margin-bottom: 6px;">Track Complaint Status</h1>
+  <p class="muted" style="margin-bottom: 20px;">Enter your unique Complaint ID (e.g., CF-100001) to view real-time resolution progress.</p>
+  
+  <form onsubmit="trackComplaint(event)" class="inline-form">
+    <div style="position: relative; flex: 1;">
+      <input id="trackId" placeholder="Enter ID e.g. CF-100001" required style="padding-left: 40px; text-transform: uppercase;">
+      <i class="fa-solid fa-hashtag" style="position: absolute; left: 14px; top: 16px; color: var(--text-muted);"></i>
+    </div>
+    <button class="btn primary" type="submit"><i class="fa-solid fa-magnifying-glass"></i> Track</button>
+  </form>
+</section>
+<section id="trackResult"></section>
+</main>
+<script src="js/app.js"></script>
+<script src="js/track.js"></script>
+</body>
+</html>
