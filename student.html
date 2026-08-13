@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Dashboard - CampusFixAI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<nav class="navbar">
+  <div class="brand"><i class="fa-solid fa-wrench"></i>Campus<span>FixAI</span></div>
+  <div class="user-badge">
+    <span><i class="fa-solid fa-user-graduate"></i> <span id="studentName"></span></span>
+    <button class="btn small" onclick="logout()"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+  </div>
+</nav>
+<main class="container">
+  <section class="hero">
+    <div>
+      <p class="eyebrow">STUDENT PORTAL</p>
+      <h1>Welcome back 👋</h1>
+      <p>Report campus infrastructure problems and track real-time resolution status.</p>
+    </div>
+    <a class="btn primary" href="report.html"><i class="fa-solid fa-plus"></i> Report a Problem</a>
+  </section>
+
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-icon total"><i class="fa-solid fa-folder-open"></i></div>
+      <div><b id="total">0</b><span>Total Issues</span></div>
+    </div>
+    <div class="stat">
+      <div class="stat-icon pending"><i class="fa-solid fa-clock"></i></div>
+      <div><b id="pending">0</b><span>Pending</span></div>
+    </div>
+    <div class="stat">
+      <div class="stat-icon progress"><i class="fa-solid fa-spinner"></i></div>
+      <div><b id="progress">0</b><span>In Progress</span></div>
+    </div>
+    <div class="stat">
+      <div class="stat-icon resolved"><i class="fa-solid fa-circle-check"></i></div>
+      <div><b id="resolved">0</b><span>Resolved</span></div>
+    </div>
+  </div>
+
+  <section class="card">
+    <div class="section-title">
+      <h2><i class="fa-solid fa-list-check"></i> My Complaints</h2>
+      <a href="track.html" class="btn secondary small"><i class="fa-solid fa-magnifying-glass"></i> Track by ID</a>
+    </div>
+    <div id="complaintList"></div>
+  </section>
+</main>
+<script src="js/app.js"></script>
+<script src="js/student.js"></script>
+</body>
+</html>
