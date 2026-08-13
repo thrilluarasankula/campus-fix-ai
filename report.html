@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Report Problem - CampusFixAI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<nav class="navbar">
+  <a class="brand" href="student.html"><i class="fa-solid fa-wrench"></i>Campus<span>FixAI</span></a>
+  <a class="btn small" href="student.html"><i class="fa-solid fa-arrow-left"></i> Back to Dashboard</a>
+</nav>
+<main class="container narrow">
+<section class="card">
+  <p class="eyebrow"><i class="fa-solid fa-plus-circle"></i> NEW COMPLAINT</p>
+  <h1 style="font-size: 1.8rem; font-weight: 800; margin-bottom: 6px;">Report a Campus Issue</h1>
+  <p class="muted" style="margin-bottom: 20px;">Describe the problem. CampusFixAI will automatically categorize and prioritize it.</p>
+
+  <form id="reportForm" onsubmit="submitComplaint(event)">
+    <label><i class="fa-solid fa-pen"></i> Problem Title</label>
+    <input id="title" placeholder="e.g. Broken classroom fan or water leak" required oninput="analyzeForm()">
+
+    <label><i class="fa-solid fa-location-dot"></i> Location / Building / Room</label>
+    <input id="location" placeholder="e.g. CSE Block, Room 204" required>
+
+    <label><i class="fa-solid fa-layer-group"></i> Category (Optional Override)</label>
+    <select id="category">
+      <option value="">✨ Auto-detect with CampusFixAI</option>
+      <option value="Electrical">⚡ Electrical</option>
+      <option value="Plumbing">💧 Plumbing</option>
+      <option value="Cleaning">🧹 Cleaning</option>
+      <option value="Network">📶 Network</option>
+      <option value="Furniture">🪑 Furniture</option>
+      <option value="Security">🛡️ Security</option>
+      <option value="Other">🔧 Other</option>
+    </select>
+
+    <label><i class="fa-solid fa-align-left"></i> Detailed Description</label>
+    <textarea id="description" rows="5" placeholder="Explain what happened, severity, or exact spot..." required oninput="analyzeForm()"></textarea>
+
+    <label><i class="fa-solid fa-camera"></i> Attach Photo (Optional)</label>
+    <input id="image" type="file" accept="image/*" onchange="previewImage(event)">
+    <img id="preview" class="preview hidden" alt="Preview">
+
+    <div class="ai-result">
+      <div class="ai-header">
+        <i class="fa-solid fa-wand-magic-sparkles"></i> <span>CampusFixAI Smart Assistant</span>
+      </div>
+      <p id="aiPreview" style="font-size: 0.9rem; color: #3730a3;">Start typing title & description above for instant AI priority assessment.</p>
+    </div>
+
+    <button class="btn primary full" type="submit"><i class="fa-solid fa-paper-plane"></i> Submit Complaint</button>
+  </form>
+  <p id="formMsg" class="message"></p>
+</section>
+</main>
+<script src="js/app.js"></script>
+<script src="js/report.js"></script>
+</body>
+</html>
