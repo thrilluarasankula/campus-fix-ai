@@ -30,15 +30,3 @@ Admin:
 admin@campusfix.ai
 admin123
 
-## Run
-
-1. Extract the ZIP.
-2. Open the folder in VS Code.
-3. Open `index.html` with Live Server, or simply open it in a browser.
-4. Login using the demo credentials.
-
-## Important
-
-This is a frontend-only MVP using browser LocalStorage. It is suitable for a prototype/demo.
-
-For production, replace the login and LocalStorage layer with Firebase Authentication, Firestore, and Firebase Storage, and connect a real AI API through a secure backend.
